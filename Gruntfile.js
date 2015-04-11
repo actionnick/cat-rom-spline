@@ -6,6 +6,12 @@ module.exports = function (grunt) {
   require('load-grunt-tasks')(grunt);
 
   grunt.initConfig({
+    browserify: {
+      'curves-graph': {
+        src: ['examples/curves-graph/curves-graph.js'],
+        dest: 'examples/curves-graph/build/curves-graph.js'
+      }
+    },
     jshint: {
       options: {
         jshintrc: '.jshintrc',
@@ -44,5 +50,6 @@ module.exports = function (grunt) {
     }
   });
 
+   grunt.registerTask('examples', ['browserify:curves-graph']);
   grunt.registerTask('default', ['jshint', 'mochacli']);
 };

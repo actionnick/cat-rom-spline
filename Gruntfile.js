@@ -50,6 +50,6 @@ module.exports = function (grunt) {
     }
   });
 
-   grunt.registerTask('examples', ['browserify:curves-graph']);
+  grunt.registerTask('examples', ['browserify:curves-graph']);
   grunt.registerTask('default', ['jshint', 'mochacli']);
 };

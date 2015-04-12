@@ -1,6 +1,6 @@
 {
   "name": "cat-rom-spline",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Catmull Rom spline interpolation made easy.",
   "author": {
     "name": "Nick Schaubeck",

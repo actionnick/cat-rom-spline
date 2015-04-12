@@ -36,7 +36,7 @@ var interpolatedPoints = catRomSpline(points, options);
 
 ## License
 
-MIT © [Nick Schaubeck](northofbrooklyn.nyc)
+MIT © [Nick Schaubeck](http://www.northofbrooklyn.nyc)
 
 
 [npm-image]: https://badge.fury.io/js/cat-rom-spline.svg

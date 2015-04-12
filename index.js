@@ -85,6 +85,9 @@ var catmullRomSpline = function(controlPoints, options) {
 
     points.push(p1);
     points = points.concat(catmullRomSplineSegment(p0, p1, p2, p3, samples, knot));
+    if (!controlPoints[offset]) {
+      points.push(p2);
+    }
   });
 
   return points;

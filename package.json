@@ -20,7 +20,7 @@
     "interpolation"
   ],
   "dependencies": {
-    "gl-matrix": "2.1.0"
+    "gl-vec2": "^1.0.0"
   },
   "devDependencies": {
     "browserify": "9.0.3",

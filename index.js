@@ -1,8 +1,6 @@
-var vec2 = require("gl-matrix").vec2;
-
-var distance = function(p0, p1) {
-  return Math.sqrt(Math.pow((p1[0] - p0[0]), 2) + Math.pow((p1[1] - p0[1]), 2));
-};
+var add = require('gl-vec2/add');
+var scale = require('gl-vec2/scale');
+var distance = require('gl-vec2/distance');
 
 var interpolatePoint = function(p0, p1, p2, p3, t0, t1, t2, t3, t) {
   var a1, a2, a3, b1, b2, c;
@@ -13,14 +11,14 @@ var interpolatePoint = function(p0, p1, p2, p3, t0, t1, t2, t3, t) {
   b2 = [];
   c = [];
 
-  vec2.add(a1, vec2.scale([], p0, (t1 - t)/(t1 - t0)), vec2.scale([], p1, (t - t0)/(t1 - t0)));
-  vec2.add(a2, vec2.scale([], p1, (t2 - t)/(t2 - t1)), vec2.scale([], p2, (t - t1)/(t2 - t1)));
-  vec2.add(a3, vec2.scale([], p2, (t3 - t)/(t3 - t2)), vec2.scale([], p3, (t - t2)/(t3 - t2)));
+  add(a1, scale([], p0, (t1 - t)/(t1 - t0)), scale([], p1, (t - t0)/(t1 - t0)));
+  add(a2, scale([], p1, (t2 - t)/(t2 - t1)), scale([], p2, (t - t1)/(t2 - t1)));
+  add(a3, scale([], p2, (t3 - t)/(t3 - t2)), scale([], p3, (t - t2)/(t3 - t2)));
 
-  vec2.add(b1, vec2.scale([], a1, (t2 - t)/(t2 - t0)), vec2.scale([], a2, (t - t0)/(t2 - t0)));
-  vec2.add(b2, vec2.scale([], a2, (t3 - t)/(t3 - t1)), vec2.scale([], a3, (t - t1)/(t3 - t1)));
+  add(b1, scale([], a1, (t2 - t)/(t2 - t0)), scale([], a2, (t - t0)/(t2 - t0)));
+  add(b2, scale([], a2, (t3 - t)/(t3 - t1)), scale([], a3, (t - t1)/(t3 - t1)));
 
-  vec2.add(c, vec2.scale([], b1, (t2 - t)/(t2 - t1)), vec2.scale([], b2, (t - t1)/(t2 - t1)));
+  add(c, scale([], b1, (t2 - t)/(t2 - t1)), scale([], b2, (t - t1)/(t2 - t1)));
 
   return c;
 };
